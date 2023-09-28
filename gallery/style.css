@@ -1,0 +1,820 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* list-style: none; */
+}
+
+body{
+    background: linear-gradient(114.47deg, #DCD6F7 2.49%, #FFFAEE 96.73%);
+    font-family: "Merriweather";
+}
+
+/* HEADER */
+
+header p{
+    text-align: center;
+    font-family: "Merriweather";
+    font-size: 20px;
+    background: #DCD6F7;
+    padding: 10px;
+}
+
+nav{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    background: #EBD8B2;
+    font-family: "Merriweather";
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-bottom: 0.01px solid #000000; 
+    z-index: 9999; 
+}
+
+nav .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    padding-top: 15px;
+    margin-left: 40px;
+    background: none;
+}
+
+nav ul{
+    display: inline-flex;
+}
+
+nav ul li{
+    display: inline;
+    line-height: 100px;
+    margin: 0 20px;
+    font-size: 30px;
+    background: none;
+    text-align: center;
+}
+
+nav ul li a{
+    color: #424874;
+    font-size: 100%;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover{
+    color: #A6B1E1;
+}
+
+nav .profile:hover{
+    content: url("../header/profile\ light.png");
+}
+
+.responsive{
+    display: none;
+}
+
+nav .hamburger{
+    display: none;
+    height: min-content;
+    margin: auto;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+nav .hamburger .bar{
+    width: 35px;
+    height: 4px;
+    margin-bottom: 7px;
+    background: #424874;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+input{
+    display: none;
+}
+
+input:checked ~ nav #menu{
+    transform: translateY(0);
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(2){
+    display: none;
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.profile{
+    width: 74px;
+    height: 74px;
+    margin: auto 50px auto 0;
+    background: none;
+}
+
+nav.sticky{
+    position: fixed;
+    top: -1px;
+    left: 0;
+}
+
+@media (max-width:1200px){
+    header p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px){
+    nav ul li{
+        font-size: 20px;
+    }
+    nav .logo{
+        scale: 80%;
+        margin: 0;
+    }
+    .profile{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media(max-width: 864px){
+    header p{
+        font-size: smaller;
+    }
+    nav ul li{
+        font-size: 23px;
+        padding-left: 25px;
+    }
+    nav img{
+        scale: 75%;
+    }
+    nav .logo{
+        padding-left: 10px;
+    }
+    nav .profile{
+        margin: auto;
+    }
+}
+
+@media(max-width: 768px) {
+    header p{
+        font-size: 12px;
+    }
+    nav .responsive{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        max-width: 400px;
+        background: #EBD8B2;
+        display: grid;
+        padding: 50px 0;
+        text-align: center;
+        line-height: 80px;
+        transform: translateY(-100%);
+        transition: .6s;
+    }
+    nav .hamburger .bar{
+        z-index: 100;
+    }
+    nav ul li a{
+        font-size: 28px;
+        font-weight: 600;
+    }
+    nav ul li{
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li:hover{
+        background: #E5CFA4;
+        border-top: 0.001px solid#000000;
+        border-bottom: 0.001px solid black;
+        height: 100px;
+    }
+    .profile{
+        display: none;
+    }
+    nav{
+        height: auto;
+    }
+    nav .logo{
+        padding: auto;
+    }
+    nav .hamburger{
+        display: grid !important;
+    }
+}
+
+@media (max-width: 500px){
+    nav .logo{
+        scale: 70%;
+        max-width: 180px;
+        padding-left: 0;
+    }
+    header p{
+        font-size: 6px;
+    }
+    nav .content{
+        height: 50px;
+    }
+}
+
+/* HEADER END */
+
+.accordion{
+    color: #424874;
+    font-size: 40px;
+    margin: 80px auto 0;
+    border: 0;
+    border-bottom: 1px solid #424874;
+    font-family: "Merriweather";
+    background: none;
+    width: 93%;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.4s;
+    /* height: 100%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accordion.special-offer{
+    margin-top: 150px;
+}
+
+.accordion::after{
+    content: '\002B';
+    color: #424874;
+    float: right;
+    margin-left: 5px;
+}
+
+.active::after{
+    content: "\2212";
+}
+
+.product{
+    /* padding: 0 18px; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+h2{
+    font-size: 50px;
+    padding-bottom: 11px;
+    padding-left: 17px;
+    width: 1278px;
+}
+
+.specs p{
+    font-size: 20px;
+    text-align: left;
+    margin: 0 0 5px;
+    border-bottom: 0;
+    /* padding-bottom: 5px; */
+    color: #000000;
+}
+
+.specs{
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(229, 207, 164, 0.5);
+    max-width: 945px;
+    max-height: 372px;
+}
+
+span{
+    color: #424874;
+}
+
+ul li{
+    margin: 0 22px;
+    list-style-position: outside;
+}
+
+#price{
+    font-size: 40px;
+    color: #000000;
+    border-bottom: 0;
+    margin-top: 25px;
+    font-weight: 500;
+    position: relative;
+    left: -480px;
+    height: fit-content;
+}
+
+#promo{
+    font-size: 30px;
+    color: #424874;
+    height: fit-content;
+}
+
+#availability{
+    border-bottom: 0;
+    font-weight: 700;
+    color: red;
+    position: relative;
+    right: -150px;
+    top: 50px;
+    font-size: 50px;
+    height: fit-content;
+}
+
+.specs .platform, .specs .memory, .specs .battery, .specs .camera, .specs .charging, .specs .sensitivity, .specs .power, .specs .sensor, .specs .features{
+    width: 255px;
+    height: 322px;
+    border-right: 1px solid black;
+    margin: 22px 22px;
+    padding-top: 5px;
+}
+
+.specs .battery, .specs .sensitivity, .specs .features{
+    border-right: 0;
+}
+
+
+
+/* special offer */
+
+.ephone{
+    margin: 36px 50px;
+    background-color: #A6B1E1;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.ephone #price{
+    left: -140px;
+}
+
+.bundle{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.bundle img{
+    /* max-width: 312px; */
+    max-height: 372px;
+}
+
+.bundle-image, .phone-image, .tablet-image, .smartwatch-image, .sonic-image{
+    position: relative;
+    max-width: 312px;
+}
+
+.slider{
+    display: flex;
+    aspect-ratio: 26 / 31;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+}
+
+.button{
+    display: flex;
+    column-gap: 8px;
+    margin-top: 12px;
+    position: absolute;
+    left: 18.056%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.button a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.button a:hover{
+    opacity: 1;
+    background-color: #6E6C6C;
+}
+
+.bundle #price{
+    left: -200px;
+}
+
+
+/* phone */
+.phone{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+
+/* tablet */
+.tablet{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+
+/* smartwatch */
+.smartwatch{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.ephone:hover, .bundle:hover, .phone:hover, .tablet:hover, .smartwatch:hover, .sonic:hover, .earpod:hover{
+    box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* accesories */
+.sonic{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.earpod{
+    margin: 36px 50px;
+    background-color: #DCD6F7;
+    padding: 24px 33px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+/* find our nearest location */
+.findus{
+    display: flex;
+    justify-content: center;
+}
+
+.find{
+    font-family: "Inter";
+    color: #424874;
+    border: 2px solid #424874;
+    font-size: 35px;
+    width: 500px;
+    padding: 29px 0;
+    text-align: center;
+    margin: 43px;
+}
+
+.find:hover{
+    color: #DCD6F7;
+    background-color: #424874;
+}
+
+@media (max-width: 1376px){
+    .specs{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1024px){
+    .specs{
+        margin-top: 20px;
+        padding-bottom: 70px;
+    }
+    .specs .platform, .specs .memory, .specs .battery, .specs .camera, .specs .charging, .specs .sensitivity, .specs .power, .specs .sensor, .specs .features{
+        max-width: 240px;
+    }
+    #price{
+        left: 50px;
+        top: -550px;
+    }
+    #availability{
+        top: -520px;
+        left: -170px;
+        font-size: 50px;
+    }
+    .product img, .bundle-image, .phone-image, .tablet-image, .smartwatch-image, .sonic-image{
+        position: relative;
+        left: -260px;
+    }
+    .button{
+        margin-top: 7px;
+        margin-left: 68px;
+    }
+    .ephone, .phone, .tablet, .smartwatch, .sonic, .earpod{
+       max-height: 930px; 
+    }
+    .ephone #price{
+        left: 280px;
+        top: -700px;
+        max-width: 350px;
+    }
+    .bundle #price{
+        max-width: 500px;
+        top: -700px;
+        left: 190px;
+    }
+    .bundle{
+        max-height: 990px;
+    }
+    .accordion{
+        max-width: 888px;
+    }
+}
+
+@media (max-width: 768px){
+    .specs{
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+    .specs .platform, .specs .memory, .specs .battery, .specs .camera, .specs .charging, .specs .sensitivity, .specs .power, .specs .sensor, .specs .features{
+        max-width: 250px;
+    }
+    #price{
+        left: 150px;
+        top: -520px;
+        font-size: 30px;
+    }
+    #promo{
+        font-size: 25px;
+    }
+    #availability{
+        top: -700px;
+        left: 130px;
+        font-size: 35px;
+    }
+    .product img, .bundle-image, .phone-image, .tablet-image, .smartwatch-image, .sonic-image{
+        left: -130px;
+    }
+    .button{
+        margin-left: 115px;
+    }
+    .ephone #price{
+        left: 200px;
+        top: -630px;
+        max-width: 290px;
+    }
+    .bundle #price{
+        max-width: 290px;
+        top: -660px;
+        left: 190px;
+    }
+    .bundle{
+        max-height: 1040px;
+    }
+    .specs .platform, .specs .power{
+        display: none;
+    }
+}
+
+@media (max-width: 426px){
+    .specs{
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+    h2{
+        font-size: 35px;
+        text-align: center;
+    }
+    .specs .platform, .specs .memory, .specs .battery, .specs .camera, .specs .charging, .specs .sensitivity, .specs .power, .specs .sensor, .specs .features{
+        display: none;
+    }
+    #price{
+        left: 0;
+        top: 0;
+        font-size: 30px;
+        margin: 30px 0 0;
+        text-align: center;
+    }
+    #promo{
+        font-size: 25px;
+    }
+    #availability{
+        top: 0;
+        left: 0;
+        font-size: 35px;
+        margin: 0;
+        margin-top: 22px;
+    }
+    .product img, .bundle-image, .phone-image, .tablet-image, .smartwatch-image, .sonic-image{
+        left: 0;
+        scale: 90%;
+    }
+    .button{
+        margin: 0;
+        left: 50%;
+    }
+    .ephone #price{
+        left: 0;
+        top: -0;
+    }
+    .bundle #price{
+        top: 0;
+        left: 0;
+    }
+    .find{
+        font-size: 25px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 376px){
+    .product img{
+        scale: 80%;
+        max-height: 300px;
+    }
+    .slider{
+        height: 280px;
+    }
+    .slider img{
+        scale: 100%;
+        /* flex: 1 0 80%; */
+    }
+    .accordion{
+        font-size: 18px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    #price{
+        padding-top: 10px;
+        font-size: medium;
+        margin-top: 20px;
+    }
+    #availability{
+        font-size: medium;
+    }
+    #promo{
+        font-size: medium;
+    }
+}
+
+
+/* FOOTER */
+footer{
+    background: #424874;
+    color: white;
+    font-family: "Merriweather";
+    font-size: 20px;
+}
+
+.container{
+    max-width: 1262px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row{
+    width: 1262px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.col1{
+    padding-top: 38px;
+    max-width: 518px;
+}
+
+.col1 p{
+    padding-top: 26px;
+}
+
+pre{
+    color: white;
+    font-family: "Merriweather";
+    padding-top: 50px;
+}
+
+.col2{
+    padding: 0 45px 0 45px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    margin: 61px 49px 40px;
+}
+
+.col2 ul li{
+    line-height: 50px;
+    list-style: none;
+}
+
+.col2 ul li a{
+    color: white;
+}
+
+.col3{
+    padding-top: 65px;
+    max-width: 338px;
+}
+
+.col3 img{
+    padding-top: 18px;
+}
+
+.col3 .contact-us{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.contact{
+    min-width: 255px;
+    padding-top: 18px;
+}
+
+@media(max-width: 1024px){
+    .col2{
+        border-right: 0;
+    }
+}
+
+@media(max-width: 768px){
+    .col2{
+        border-right: 1px solid white;
+        border-left: 0;
+    }
+}
+
+@media(max-width: 426px){
+    .col2{
+        border-right: 0;
+        padding: 20px;
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    .col1{
+        max-width: 290px;
+        padding: 0;
+        padding-top: 30px;
+        font-size: 16px;
+    }
+
+    pre{
+        max-width: 290px;
+        border-bottom: 1px solid white; 
+        font-size: 16px;
+    }
+
+    .col3{
+        padding-top: 20px;
+        border-top: 1px solid white;
+        font-size: 16px;
+    }
+
+    .contact{
+        line-height: 26px;
+    }
+}

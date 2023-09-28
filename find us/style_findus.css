@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* list-style: none; */
+}
+
+body{
+    background: linear-gradient(114.47deg, #DCD6F7 2.49%, #FFFAEE 96.73%);
+    font-family: "Merriweather";
+}
+
+/* HEADER */
+
+header p{
+    text-align: center;
+    font-family: "Merriweather";
+    font-size: 20px;
+    background: #DCD6F7;
+    padding: 10px;
+}
+
+nav{
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    background: #EBD8B2;
+    font-family: "Merriweather";
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-bottom: 0.01px solid #000000; 
+    z-index: 9999; 
+}
+
+nav .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    padding-top: 15px;
+    margin-left: 40px;
+    background: none;
+}
+
+nav ul{
+    display: inline-flex;
+}
+
+nav ul li{
+    display: inline;
+    line-height: 100px;
+    margin: 0 20px;
+    font-size: 30px;
+    background: none;
+    text-align: center;
+}
+
+nav ul li a{
+    color: #424874;
+    font-size: 100%;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+
+nav a:hover{
+    color: #A6B1E1;
+}
+
+nav .profile:hover{
+    content: url("../header/profile\ light.png");
+}
+
+.responsive{
+    display: none;
+}
+
+nav .hamburger{
+    display: none;
+    height: min-content;
+    margin: auto;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+nav .hamburger .bar{
+    width: 35px;
+    height: 4px;
+    margin-bottom: 7px;
+    background: #424874;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+input{
+    display: none;
+}
+
+input:checked ~ nav #menu{
+    transform: translateY(0);
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(2){
+    display: none;
+}
+
+input:checked ~ nav .hamburger .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+
+.profile{
+    width: 74px;
+    height: 74px;
+    margin: auto 50px auto 0;
+    background: none;
+}
+
+nav.sticky{
+    position: fixed;
+    top: -1px;
+    left: 0;
+}
+
+@media (max-width:1200px){
+    header p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px){
+    nav ul li{
+        font-size: 20px;
+    }
+    nav .logo{
+        scale: 80%;
+        margin: 0;
+    }
+    .profile{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media(max-width: 864px){
+    header p{
+        font-size: smaller;
+    }
+    nav ul li{
+        font-size: 23px;
+        padding-left: 25px;
+    }
+    nav img{
+        scale: 75%;
+    }
+    nav .logo{
+        padding-left: 10px;
+    }
+    nav .profile{
+        margin: auto;
+    }
+}
+
+@media(max-width: 768px) {
+    header p{
+        font-size: 12px;
+    }
+    nav .responsive{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        max-width: 400px;
+        background: #EBD8B2;
+        display: grid;
+        padding: 50px 0;
+        text-align: center;
+        line-height: 80px;
+        transform: translateY(-100%);
+        transition: .6s;
+    }
+    nav .hamburger .bar{
+        z-index: 100;
+    }
+    nav ul li a{
+        font-size: 28px;
+        font-weight: 600;
+    }
+    nav ul li{
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li:hover{
+        background: #E5CFA4;
+        border-top: 0.001px solid#000000;
+        border-bottom: 0.001px solid black;
+        height: 100px;
+    }
+    .profile{
+        display: none;
+    }
+    nav{
+        height: auto;
+    }
+    nav .logo{
+        padding: auto;
+    }
+    nav .hamburger{
+        display: grid !important;
+    }
+}
+
+@media (max-width: 500px){
+    nav .logo{
+        scale: 70%;
+        max-width: 180px;
+        padding-left: 0;
+    }
+    header p{
+        font-size: 6px;
+    }
+    nav .content{
+        height: 50px;
+    }
+}
+
+/* HEADER END */
+
+
+
+/* our location */
+.map{
+    margin: 0 89px;
+}
+
+h3{
+    text-align: center;
+    padding-top: 150px;
+    font-size: 40px;
+    padding-bottom: 50px;
+    color: #424874;
+    font-weight: 400;
+}
+
+.loc{
+    background-image: url(picture/maps.png);
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+    margin: auto;
+    width: 100%;
+    height: 60vh;
+    scale: 100%;
+    display: block;
+}
+
+button{
+    border: 0;
+}
+
+#map-palembang{
+    position: relative;
+    width: 1vw;
+    height: 1vh;
+    left: 345.29px;
+    top: 79.65px;
+    background: none;
+}
+
+#map-surabaya{
+    position: relative;
+    width: 1vw;
+    height: 1vh;
+    left: 670px;
+    top: 276.71px;
+    background: none;
+}
+
+#map-semarang{
+    position: relative;
+    width: 1vw;
+    height: 1vh;
+    left: 570px;
+    top: 273.18px;
+    background: none;
+}
+
+#map-supermal{
+    position: relative;
+    width: 1vw;
+    height: 1vh;
+    left: 411px;
+    top: 250px;
+    background: none;
+}
+
+.store{
+    margin: 47px auto;
+}
+
+.supermal, .surabaya, .semarang, .palembang{
+    display: flex;
+    margin: 47px auto;
+}
+
+.surabaya, .semarang, .palembang{
+    display: none;
+    margin: 47px auto;
+}
+
+#map1-supermal{
+    scale: 60%;
+}
+
+.supermal .text-supermal, .surabaya .text-surabaya, .semarang .text-semarang, .palembang .text-palembang{
+    padding: 21px;
+    max-width: 936px;
+    background: #EBD8B2;
+}
+
+h2{
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+
+.text-palembang p, .text-semarang p, .text-supermal p, .text-surabaya p{
+    font-size: 25px;
+    width: fit-content;
+}
+
+@media(max-width:1240px){
+    .loc{
+        height: 48vh;
+    }
+    #map-palembang{
+        left: 297.33056px;
+        top: 68.5875px;
+    }
+    #map-surabaya{
+        left: 550px;
+        top: 238.278056px;
+    }
+    #map-semarang{
+        left: 480px;
+        top: 220px;
+    }
+    #map-supermal{
+        left: 353.9167px;
+        top: 199.78px;
+    }
+}
+
+@media (max-width: 1024px){
+    #map-palembang{
+        left: 236px;
+        top: 40px;
+    }
+    #map-surabaya{
+        left: 440px;
+        top: 172px;
+    }
+    #map-semarang{
+        left: 389px;
+        top: 160px;
+    }
+    #map-supermal{
+        left: 269px;
+        top: 145px;
+    }
+    .loc{
+        height: 40vh;
+    }
+}
+
+@media(max-width:900px){
+    .loc{
+        height: 32vh;
+    }
+    .text-palembang p, .text-semarang p, .text-supermal p, .text-surabaya p{
+        font-size: 18px;
+    }
+    .supermal img, .surabaya img, .semarang img, .palembang img{
+        max-height: 304px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    #map-palembang{
+        scale: 70%;
+        left: 200px;
+        top: 30px;
+    }
+    #map-surabaya{
+        scale: 70%;
+        left: 370px;
+        top: 140px;
+    }
+    #map-semarang{
+        scale: 70%;
+        left: 325px;
+        top: 140px;
+    }
+    #map-supermal{
+        scale: 70%;
+        left: 230px;
+        top: 130px;
+    }
+}
+
+@media(max-width:780px){
+    .loc{
+        height: 30vh;
+    }
+    #map-palembang{
+        scale: 60%;
+        left: 165px;
+        top: 18px;
+    }
+    #map-surabaya{
+        scale: 60%;
+        left: 305px;
+        top: 116px;
+    }
+    #map-semarang{
+        scale: 60%;
+        left: 270px;
+        top: 107px;
+    }
+    #map-supermal{
+        scale: 60%;
+        left: 190px;
+        top: 107px;
+    }
+    .text-palembang p, .text-semarang p, .text-supermal p, .text-surabaya p{
+        font-size: 16px;
+    }
+    h2{
+        font-size: 23px;
+    }
+    .supermal, .surabaya, .semarang, .palembang{
+        justify-content: center;
+    }
+    .map{
+        margin: 0 60px;
+    }
+}
+
+@media(max-width: 768px){
+    #map-palembang{
+        left: 180px;
+        top: 20px;
+    }
+    #map-surabaya{
+        left: 335px;
+        top: 130px;
+    }
+    #map-semarang{
+        left: 290px;
+        top: 120px;
+    }
+    #map-supermal{
+        left: 210px;
+        top: 120px;
+    }
+}
+
+@media(max-width: 650px){
+    .loc{
+        height: 25vh;
+    }
+    .supermal, .surabaya, .semarang, .palembang{
+        flex-wrap: wrap;
+        margin: 50px auto;
+        max-width: 304px;
+    }
+    .text-palembang p, .text-semarang p, .text-supermal p, .text-surabaya p{
+        font-size: 15px;
+    }
+    #map-palembang{
+        left: 140px;
+        top: 10px;
+    }
+    #map-surabaya{
+        left: 265px;
+        top: 100px;
+    }
+    #map-semarang{
+        left: 235px;
+        top: 90px;
+    }
+    #map-supermal{
+        left: 170px;
+        top: 90px;
+    }
+}
+
+@media(max-width: 500px){
+    .loc{
+        background-size: cover;
+        background-position-x: center;
+    }
+    #map-palembang{
+        left: 60px;
+        top: 10px;
+    }
+    #map-surabaya{
+        left: 200px;
+        top: 100px;
+    }
+    #map-semarang{
+        left: 165px;
+        top: 100px;
+    }
+    #map-supermal{
+        left: 87px;
+        top: 100px;
+    }
+}
+
+@media(max-width: 426px){
+    .map{
+        margin: auto;
+    }
+    .loc{
+        width: 304px;
+        height: 304px;
+        margin: auto;
+    }
+    h3{
+        font-size: 20px;
+        padding: 80px 0 30px;
+    }
+    #map-palembang{
+        left: 5px;
+        top: 25px;
+    }
+    #map-surabaya{
+        left: 175px;
+        top: 135px;
+    }
+    #map-semarang{
+        left: 125px;
+        top: 130px;
+    }
+    #map-supermal{
+        left: 40px;
+        top: 130px;
+    }
+}
+
+@media(max-width: 320px){
+    .palembang img, .semarang img, .supermal img, .surabaya img{
+        max-width: 280px;
+    }
+    .palembang p, .semarang p, .supermal p, .surabaya p{
+        width: 240px;
+        font-size: smaller;
+    }
+}
+
+/* FOOTER */
+footer{
+    background: #424874;
+    color: white;
+    font-family: "Merriweather";
+    font-size: 20px;
+}
+
+.container{
+    max-width: 1262px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row{
+    width: 1262px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.col1{
+    padding-top: 38px;
+    max-width: 518px;
+}
+
+.col1 p{
+    padding-top: 26px;
+}
+
+pre{
+    color: white;
+    font-family: "Merriweather";
+    padding-top: 50px;
+}
+
+.col2{
+    padding: 0 45px 0 45px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    margin: 61px 49px 40px;
+
+}
+
+.col2 ul li{
+    line-height: 50px;
+    list-style-type: none;
+}
+
+.col2 ul li a{
+    color: white;
+}
+
+.col3{
+    padding-top: 65px;
+    max-width: 338px;
+}
+
+.col3 img{
+    padding-top: 18px;
+}
+
+.col3 .contact-us{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.contact{
+    min-width: 255px;
+    padding-top: 18px;
+}
+
+@media(max-width: 1024px){
+    .col2{
+        border-right: 0;
+    }
+}
+
+@media(max-width: 768px){
+    .col2{
+        border-right: 1px solid white;
+        border-left: 0;
+    }
+}
+
+@media(max-width: 426px){
+    .col2{
+        border-right: 0;
+        padding: 20px;
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    .col1{
+        max-width: 290px;
+        padding: 0;
+        padding-top: 30px;
+        font-size: 16px;
+    }
+
+    pre{
+        max-width: 290px;
+        border-bottom: 1px solid white; 
+        font-size: 16px;
+    }
+
+    .col3{
+        padding-top: 20px;
+        border-top: 1px solid white;
+        font-size: 16px;
+    }
+
+    .contact{
+        line-height: 26px;
+    }
+}

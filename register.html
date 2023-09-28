@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllGadget</title>
+    <link rel="stylesheet" href="register/style_register.css">
+    <script src="register/script.js" defer></script>
+</head>
+<body>
+    <a href="home.html"><img src="close-button_icon-icons.com_72803.png" alt=""></a>
+
+    <div class="register">
+        <h2>Register</h2>
+        
+        <form action="home.html">
+            <label for="username">Full Name</label> <br>
+            <input type="text" name="username" id="username" placeholder="Enter your full name">
+            
+            <br> <br>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            
+            <br> <br>
+            <label for="email">Email Address</label> <br>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            
+            <br><br>
+            <label for="phonenumber">Phone Number</label>
+
+            <div class="phonenumber">
+                <p>+62</p>
+                <input type="number" name="phonenumber" id="phonenumber" placeholder="Enter your phone number">
+            </div>
+            
+
+            <br>
+            <label for="gender">Gender</label> <br>
+            <select name="gender" id="gender">
+                <option value="empty">Choose one</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <br> <br>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label class="terms" for="checkbox">I agree to the <u>terms and conditions</u></label>
+
+            <div class="confirm">
+                <br> <br>
+                <a href="home.html"><button type="submit" onclick="validateForrm(event)">Confirm</button></a>
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>
